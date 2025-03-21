@@ -1,31 +1,14 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Separator } from "@/components/ui/separator";
-import { 
-  BookOpen, 
-  Shield, 
-  UserCheck, 
-  Copy, 
-  Bot, 
-  Mail, 
-  Scale, 
-  XCircle, 
-  AlertTriangle, 
-  RefreshCw, 
-  Globe,
-  MessageSquare
-} from "lucide-react";
-
+import { BookOpen, Shield, UserCheck, Copy, Bot, Mail, Scale, XCircle, AlertTriangle, RefreshCw, Globe, MessageSquare } from "lucide-react";
 const Terms = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -34,7 +17,7 @@ const Terms = () => {
             <p className="text-muted-foreground mb-6">Last Updated: March 16, 2025</p>
             
             <div className="prose prose-lg max-w-none mb-8">
-              <p className="text-lg">
+              <p className="text-base">
                 Welcome to Letterface! These Terms of Service ("Terms") govern your use of the Letterface application ("Service"), 
                 provided by Lifestyle Corp Pty Ltd ("we," "us," or "our"). By accessing or using the Service, 
                 you agree to be bound by these Terms. If you do not agree, please do not use the Service.
@@ -207,8 +190,6 @@ const Terms = () => {
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Terms;
