@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Button from './Button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Apple, Smartphone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Hero = () => {
@@ -32,16 +32,20 @@ const Hero = () => {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" rightIcon={<ArrowRight size={16} />}>
-                Get Started Free
-              </Button>
-              <Button size="lg" variant="outline">
-                See Examples
-              </Button>
+              <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
+                <Button variant="primary" size="lg" leftIcon={<Apple size={20} />}>
+                  App Store
+                </Button>
+              </a>
+              <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="lg" leftIcon={<Smartphone size={20} />}>
+                  Google Play
+                </Button>
+              </a>
             </div>
             
             <p className="text-foreground/60 text-sm">
-              No credit card required. Cancel anytime.
+              Available on iOS and Android. No credit card required.
             </p>
           </div>
           

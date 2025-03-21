@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Apple, Smartphone } from 'lucide-react';
+import Button from './Button';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -11,11 +13,23 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-              <span className="text-xl font-display font-bold">Letterface</span>
+              <span className="text-xl font-display font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">Letterface</span>
             </div>
             <p className="text-foreground/70 max-w-md mb-6">
               Letterface is an AI-powered newsletter service that delivers personalized content directly to your inbox, exactly when you want it.
             </p>
+            <div className="flex flex-wrap gap-4 mb-6">
+              <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" leftIcon={<Apple size={16} />}>
+                  App Store
+                </Button>
+              </a>
+              <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
+                <Button variant="outline" size="sm" leftIcon={<Smartphone size={16} />}>
+                  Google Play
+                </Button>
+              </a>
+            </div>
             <p className="text-sm text-foreground/60">
               © {currentYear} Letterface. All rights reserved.
             </p>
