@@ -1,24 +1,25 @@
+
 import React, { useEffect, useRef } from 'react';
 import { PenSquare, Send, MailOpen } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const steps = [
   {
-    icon: <PenSquare className="text-white" size={28} />,
+    icon: <PenSquare className="text-white" size={24} />,
     title: "Define Your Content",
     description: 'Write a simple prompt like "Summarize the most important tech news in the last 24 hours" or "Send me weekly updates on renewable energy advancements."',
     color: "bg-blue-500",
     textAlign: "text-right" // Right-align this description
   },
   {
-    icon: <Send className="text-white" size={28} />,
+    icon: <Send className="text-white" size={24} />,
     title: "Choose Your Schedule",
     description: "Select how often you want to receive your newsletter—daily, weekly, or any custom schedule that fits your needs.",
     color: "bg-indigo-500",
     textAlign: "text-left" // Keep this left-aligned
   },
   {
-    icon: <MailOpen className="text-white" size={28} />,
+    icon: <MailOpen className="text-white" size={24} />,
     title: "Receive & Enjoy",
     description: "Your personalized newsletter arrives in your inbox automatically, filled with relevant, AI-generated content tailored to your interests.",
     color: "bg-primary",
@@ -101,7 +102,7 @@ const HowItWorks = () => {
                   
                   <div className="relative glass shadow-md rounded-xl p-6 border border-white/20 max-w-sm z-10">
                     <div className={cn(
-                      "absolute -top-6 -left-6 w-12 h-12 rounded-full flex items-center justify-center",
+                      "absolute -top-5 -left-4 w-10 h-10 rounded-full flex items-center justify-center",
                       step.color
                     )}>
                       {step.icon}
