@@ -102,7 +102,7 @@ const HowItWorks = () => {
                   
                   <div className="relative glass shadow-md rounded-xl p-6 border border-white/20 max-w-sm z-10">
                     <div className={cn(
-                      "absolute -top-5 -left-4 w-10 h-10 rounded-full flex items-center justify-center",
+                      "absolute -top-5 left-4 w-10 h-10 rounded-full flex items-center justify-center",
                       step.color
                     )}>
                       {step.icon}
