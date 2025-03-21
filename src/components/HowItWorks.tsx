@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { PenSquare, Send, MailOpen } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -8,19 +7,22 @@ const steps = [
     icon: <PenSquare className="text-white" size={28} />,
     title: "Define Your Content",
     description: 'Write a simple prompt like "Summarize the most important tech news in the last 24 hours" or "Send me weekly updates on renewable energy advancements."',
-    color: "bg-blue-500"
+    color: "bg-blue-500",
+    textAlign: "text-right" // Right-align this description
   },
   {
     icon: <Send className="text-white" size={28} />,
     title: "Choose Your Schedule",
     description: "Select how often you want to receive your newsletter—daily, weekly, or any custom schedule that fits your needs.",
-    color: "bg-indigo-500"
+    color: "bg-indigo-500",
+    textAlign: "text-left" // Keep this left-aligned
   },
   {
     icon: <MailOpen className="text-white" size={28} />,
     title: "Receive & Enjoy",
     description: "Your personalized newsletter arrives in your inbox automatically, filled with relevant, AI-generated content tailored to your interests.",
-    color: "bg-primary"
+    color: "bg-primary",
+    textAlign: "text-right" // Right-align this description
   }
 ];
 
@@ -80,8 +82,11 @@ const HowItWorks = () => {
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className={cn(
-                  "flex flex-col md:items-end mb-6 md:mb-0",
-                  index % 2 === 1 ? "md:items-start" : "",
+                  "flex flex-col mb-6 md:mb-0",
+                  // Apply text alignment based on the step definition
+                  step.textAlign,
+                  // Keep other alignment classes
+                  index % 2 === 1 ? "md:items-start" : "md:items-end",
                   "md:ltr"
                 )}>
                   <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
