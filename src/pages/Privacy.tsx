@@ -2,6 +2,21 @@
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Separator } from "@/components/ui/separator";
+import { 
+  Shield, 
+  User, 
+  FileText, 
+  Share2, 
+  Lock, 
+  Clock, 
+  Settings, 
+  Globe, 
+  UserMinus,
+  RefreshCw,
+  MessageSquare
+} from "lucide-react";
 
 const Privacy = () => {
   useEffect(() => {
@@ -13,94 +28,174 @@ const Privacy = () => {
       <Navbar />
       <main className="flex-grow pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-4xl font-bold mb-8">Privacy Policy</h1>
-          
-          <div className="prose prose-lg max-w-none">
-            <p>Last updated: June 1, 2023</p>
+          <div className="mb-10">
+            <h1 className="text-3xl md:text-4xl font-bold mb-3 text-gradient">Privacy Policy</h1>
+            <p className="text-muted-foreground mb-6">Last Updated: March 16, 2025</p>
             
-            <h2>1. Introduction</h2>
-            <p>
-              At Letterface, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our service.
-            </p>
-            <p>
-              Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the service.
-            </p>
+            <div className="prose prose-lg max-w-none mb-8">
+              <p className="text-lg">
+                At Letterface, we value your privacy. This Privacy Policy explains how we collect, use, 
+                and protect your personal information when you use the Letterface application ("Service"). 
+                By using the Service, you agree to the practices described in this Policy.
+              </p>
+            </div>
             
-            <h2>2. Information We Collect</h2>
-            <p>
-              We collect information that you provide directly to us when you:
-            </p>
-            <ul>
-              <li>Register for an account</li>
-              <li>Set up your newsletter preferences</li>
-              <li>Interact with our customer service</li>
-              <li>Respond to surveys or promotions</li>
-            </ul>
-            <p>
-              This information may include:
-            </p>
-            <ul>
-              <li>Your name and email address</li>
-              <li>Your newsletter preferences and prompts</li>
-              <li>Your subscription and billing information</li>
-              <li>Your communication preferences</li>
-            </ul>
+            <Separator className="my-6" />
             
-            <h2>3. How We Use Your Information</h2>
-            <p>
-              We use the information we collect to:
-            </p>
-            <ul>
-              <li>Provide, maintain, and improve our services</li>
-              <li>Generate and deliver your personalized newsletters</li>
-              <li>Process your subscriptions and send related information</li>
-              <li>Respond to your comments, questions, and requests</li>
-              <li>Communicate with you about products, services, and events</li>
-              <li>Monitor and analyze usage and trends to improve your experience</li>
-            </ul>
-            
-            <h2>4. Information Sharing</h2>
-            <p>
-              We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except in the following circumstances:
-            </p>
-            <ul>
-              <li>With vendors, consultants, and other service providers who need access to such information to carry out work on our behalf</li>
-              <li>In response to a request for information if we believe disclosure is in accordance with any applicable law, regulation, or legal process</li>
-              <li>To protect the rights, property, and safety of Letterface, our users, or others</li>
-            </ul>
-            
-            <h2>5. Data Security</h2>
-            <p>
-              We take reasonable measures to help protect information about you from loss, theft, misuse, unauthorized access, disclosure, alteration, and destruction.
-            </p>
-            
-            <h2>6. Data Retention</h2>
-            <p>
-              We will retain your personal information only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use your information to the extent necessary to comply with our legal obligations, resolve disputes, and enforce our policies.
-            </p>
-            
-            <h2>7. Your Rights</h2>
-            <p>
-              Depending on your location, you may have the right to:
-            </p>
-            <ul>
-              <li>Access the personal information we hold about you</li>
-              <li>Request that we correct or update your personal information</li>
-              <li>Request that we delete your personal information</li>
-              <li>Object to our processing of your personal information</li>
-              <li>Request the restriction of our processing of your personal information</li>
-              <li>Request a copy of your personal information in a portable format</li>
-            </ul>
-            
-            <h2>8. Changes to this Privacy Policy</h2>
-            <p>
-              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.
-            </p>
-            
-            <h2>9. Contact Us</h2>
-            <p>
-              If you have any questions about this Privacy Policy, please contact us at privacy@letterface.com
-            </p>
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1" className="border-b">
+                <AccordionTrigger className="text-left text-lg font-medium py-4">
+                  <div className="flex items-center">
+                    <User className="mr-3 h-5 w-5 text-primary" />
+                    <span>1. Information We Collect</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-2 pb-4 px-9">
+                  <ul className="space-y-4 list-disc list-outside ml-5">
+                    <li><strong>Account Information</strong>: When you sign up, we collect your email address and any other information you provide (e.g., name).</li>
+                    <li><strong>User Content</strong>: We collect the prompts you submit to generate newsletters and the resulting AI-generated content.</li>
+                    <li><strong>Usage Data</strong>: We may collect information about how you interact with the Service, such as scheduling preferences, IP address, device type, and browsing activity.</li>
+                    <li><strong>Email Delivery</strong>: We process your email address to send newsletters as scheduled.</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-2" className="border-b">
+                <AccordionTrigger className="text-left text-lg font-medium py-4">
+                  <div className="flex items-center">
+                    <FileText className="mr-3 h-5 w-5 text-primary" />
+                    <span>2. How We Use Your Information</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-2 pb-4 px-9">
+                  <ul className="space-y-4 list-disc list-outside ml-5">
+                    <li><strong>To Provide the Service</strong>: We use your information to generate, schedule, and deliver newsletters to your inbox.</li>
+                    <li><strong>To Improve the Service</strong>: We analyze usage data and User Content to enhance our AI and overall functionality.</li>
+                    <li><strong>To Communicate</strong>: We may send you service-related emails (e.g., updates, account notifications). With your consent, we may also send promotional emails.</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-3" className="border-b">
+                <AccordionTrigger className="text-left text-lg font-medium py-4">
+                  <div className="flex items-center">
+                    <Share2 className="mr-3 h-5 w-5 text-primary" />
+                    <span>3. How We Share Your Information</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-2 pb-4 px-9">
+                  <ul className="space-y-4 list-disc list-outside ml-5">
+                    <li><strong>Service Providers</strong>: We may share your information with third-party providers (e.g., email delivery services, cloud hosting) to operate the Service. These providers are bound by confidentiality obligations.</li>
+                    <li><strong>Legal Requirements</strong>: We may disclose your information if required by law or to protect our rights, safety, or property.</li>
+                    <li><strong>No Sale</strong>: We do not sell your personal information to third parties.</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-4" className="border-b">
+                <AccordionTrigger className="text-left text-lg font-medium py-4">
+                  <div className="flex items-center">
+                    <Lock className="mr-3 h-5 w-5 text-primary" />
+                    <span>4. Data Security</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-2 pb-4 px-9">
+                  <p className="mb-2">
+                    We use reasonable technical and organizational measures to protect your information from unauthorized access, loss, or misuse. 
+                    However, no system is completely secure, and we cannot guarantee absolute security.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-5" className="border-b">
+                <AccordionTrigger className="text-left text-lg font-medium py-4">
+                  <div className="flex items-center">
+                    <Clock className="mr-3 h-5 w-5 text-primary" />
+                    <span>5. Data Retention</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-2 pb-4 px-9">
+                  <p className="mb-2">
+                    We retain your account information and User Content for as long as your account is active or as needed to provide the Service. 
+                    You may delete your account at any time, after which we will delete your data within 12 months, except as required by law.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-6" className="border-b">
+                <AccordionTrigger className="text-left text-lg font-medium py-4">
+                  <div className="flex items-center">
+                    <Settings className="mr-3 h-5 w-5 text-primary" />
+                    <span>6. Your Choices</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-2 pb-4 px-9">
+                  <ul className="space-y-4 list-disc list-outside ml-5">
+                    <li><strong>Account Management</strong>: You can update or delete your account via the Service.</li>
+                    <li><strong>Email Preferences</strong>: You can opt out of promotional emails by following the unsubscribe instructions in those emails. Service-related emails are mandatory.</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-7" className="border-b">
+                <AccordionTrigger className="text-left text-lg font-medium py-4">
+                  <div className="flex items-center">
+                    <Globe className="mr-3 h-5 w-5 text-primary" />
+                    <span>7. International Users</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-2 pb-4 px-9">
+                  <p className="mb-2">
+                    The Service is hosted in Australia. If you are outside this region, your data may be transferred to and processed in this location, subject to local laws.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-8" className="border-b">
+                <AccordionTrigger className="text-left text-lg font-medium py-4">
+                  <div className="flex items-center">
+                    <UserMinus className="mr-3 h-5 w-5 text-primary" />
+                    <span>8. Children's Privacy</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-2 pb-4 px-9">
+                  <p className="mb-2">
+                    The Service is not intended for users under 13. We do not knowingly collect personal information from children under 13. 
+                    If we learn of such collection, we will delete it.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-9" className="border-b">
+                <AccordionTrigger className="text-left text-lg font-medium py-4">
+                  <div className="flex items-center">
+                    <RefreshCw className="mr-3 h-5 w-5 text-primary" />
+                    <span>9. Changes to This Policy</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-2 pb-4 px-9">
+                  <p className="mb-2">
+                    We may update this Privacy Policy from time to time. We will notify you of significant changes via email or within the Service. 
+                    Your continued use of the Service after such changes constitutes acceptance of the updated Policy.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+              
+              <AccordionItem value="item-10" className="border-b">
+                <AccordionTrigger className="text-left text-lg font-medium py-4">
+                  <div className="flex items-center">
+                    <MessageSquare className="mr-3 h-5 w-5 text-primary" />
+                    <span>10. Contact Us</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pt-2 pb-4 px-9">
+                  <p className="mb-2">
+                    If you have questions about this Privacy Policy, please contact us at 
+                    <a href="mailto:contact@lifestylecorp.com.au" className="text-primary hover:underline ml-1">contact@lifestylecorp.com.au</a>.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </main>
