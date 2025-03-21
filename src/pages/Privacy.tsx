@@ -1,30 +1,14 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Separator } from "@/components/ui/separator";
-import { 
-  Shield, 
-  User, 
-  FileText, 
-  Share2, 
-  Lock, 
-  Clock, 
-  Settings, 
-  Globe, 
-  UserMinus,
-  RefreshCw,
-  MessageSquare
-} from "lucide-react";
-
+import { Shield, User, FileText, Share2, Lock, Clock, Settings, Globe, UserMinus, RefreshCw, MessageSquare } from "lucide-react";
 const Privacy = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-32 pb-16 px-4">
         <div className="max-w-4xl mx-auto">
@@ -33,7 +17,7 @@ const Privacy = () => {
             <p className="text-muted-foreground mb-6">Last Updated: March 16, 2025</p>
             
             <div className="prose prose-lg max-w-none mb-8">
-              <p className="text-lg">
+              <p className="text-base">
                 At Letterface, we value your privacy. This Privacy Policy explains how we collect, use, 
                 and protect your personal information when you use the Letterface application ("Service"). 
                 By using the Service, you agree to the practices described in this Policy.
@@ -200,8 +184,6 @@ const Privacy = () => {
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Privacy;
