@@ -17,7 +17,7 @@ const faqItems = [
   },
   {
     question: "Is there a limit to how many newsletters I can create?",
-    answer: "Different plans offer different numbers of newsletters. Our free tier allows you to create one newsletter, while paid plans offer multiple newsletters with more frequent delivery options."
+    answer: "Currently, there is a limit of 12 newsletters per paying account. In the future, different plans offer different numbers of newsletters."
   },
   {
     question: "How accurate is the information in the newsletters?",
