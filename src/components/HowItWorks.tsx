@@ -7,7 +7,7 @@ const steps = [
   {
     icon: <PenSquare className="text-white" size={28} />,
     title: "Define Your Content",
-    description: "Write a simple prompt like "Summarize the most important tech news in the last 24 hours" or "Send me weekly updates on renewable energy advancements."",
+    description: 'Write a simple prompt like "Summarize the most important tech news in the last 24 hours" or "Send me weekly updates on renewable energy advancements."',
     color: "bg-blue-500"
   },
   {
