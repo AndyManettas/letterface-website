@@ -1,12 +1,16 @@
+
 import React, { useState, useEffect } from 'react';
 import Button from './Button';
 import { ArrowRight, Apple, Smartphone } from 'lucide-react';
 import { cn } from '@/lib/utils';
+
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
   return <section className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -53,14 +57,14 @@ const Hero = () => {
                   
                   <div className="h-px bg-gradient-to-r from-border via-primary/20 to-border"></div>
                   
-                  <div className="space-y-3 prose prose-sm max-w-none">
-                    <p>Today's top tech headlines:</p>
-                    <ul>
-                      <li>Nvidia’s $1 Trillion AI Initiative</li>
+                  <div className="space-y-3">
+                    <p className="text-sm font-medium">Today's top tech headlines:</p>
+                    <ul className="space-y-2 list-disc pl-5 text-sm">
+                      <li>Nvidia's $1 Trillion AI Initiative</li>
                       <li>At GTC 2025, Nvidia introduced its Blackwell Ultra GPU and Vera Rubin AI chips</li>
                       <li>Stargate: A $500B AI Mega-Project</li>
                     </ul>
-                    <p>SoftBank, Oracle, and OpenAI announced Stargate, an AI infrastructure project aiming to boost U.S. AI supremacy.</p>
+                    <p className="text-sm">SoftBank, Oracle, and OpenAI announced Stargate, an AI infrastructure project aiming to boost U.S. AI supremacy.</p>
                   </div>
                 </div>
                 
@@ -78,4 +82,5 @@ const Hero = () => {
       <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
     </section>;
 };
+
 export default Hero;
