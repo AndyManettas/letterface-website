@@ -1,8 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Apple, Smartphone } from 'lucide-react';
-import Button from './Button';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -75,16 +73,12 @@ const Navbar = () => {
                 {link.name}
               </a>)}
           </div>
-          <div className="flex space-x-2">
+          <div className="flex space-x-3">
             <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="sm" leftIcon={<Apple size={16} />}>
-                App Store
-              </Button>
+              <img src="/app-store-button.svg" alt="App Store" className="h-10 w-auto transition-opacity hover:opacity-90" />
             </a>
             <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="sm" leftIcon={<Smartphone size={16} />}>
-                Play Store
-              </Button>
+              <img src="/play-store-button.svg" alt="Play Store" className="h-10 w-auto transition-opacity hover:opacity-90" />
             </a>
           </div>
         </div>
@@ -123,16 +117,12 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <div className="flex space-x-2 w-full pt-4">
-            <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" className="flex-1">
-              <Button variant="outline" size="sm" leftIcon={<Apple size={16} />} className="w-full justify-center">
-                App Store
-              </Button>
+          <div className="flex flex-col space-y-3 w-full pt-4">
+            <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+              <img src="/app-store-button.svg" alt="App Store" className="h-12 w-auto" />
             </a>
-            <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" className="flex-1">
-              <Button variant="outline" size="sm" leftIcon={<Smartphone size={16} />} className="w-full justify-center">
-                Play Store
-              </Button>
+            <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+              <img src="/play-store-button.svg" alt="Play Store" className="h-12 w-auto" />
             </a>
           </div>
         </div>
