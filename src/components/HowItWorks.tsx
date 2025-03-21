@@ -122,7 +122,7 @@ const HowItWorks = () => {
                         <div className="text-sm font-medium">Delivery Schedule</div>
                         <div className="space-y-2">
                           <div className="flex items-center space-x-2">
-                            <div className="w-2.5 h-2.5 rounded-full bg-primary"></div>
+                            <div className="w-2 h-2 rounded-full bg-green-500"></div>
                             <div className="text-sm">Every weekday at 8:00 AM</div>
                           </div>
                           <div className="h-px bg-border"></div>
