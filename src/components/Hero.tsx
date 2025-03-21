@@ -63,7 +63,7 @@ const Hero = () => {
                       <div>
                         <p className="font-semibold text-sm text-blue-500">🧠 Stargate: A $500B AI Mega-Project</p>
                         <ul className="list-disc pl-5 text-sm">
-                          <li>SoftBank, Oracle, and OpenAI announced Stargate, an AI infrastructure project aiming to boost U.S. AI supremacy.</li>
+                          <li>SoftBank, Oracle, and OpenAI announced Stargate, an AI infrastructure project aiming to boost U.S. AI supremacy</li>
                         </ul>
                       </div>
                     </div>
