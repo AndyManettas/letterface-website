@@ -1,12 +1,15 @@
+
 import React, { useState, useEffect } from 'react';
-import Button from './Button';
-import { ArrowRight, Apple, Smartphone } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { ArrowRight } from 'lucide-react';
+
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
+  
   useEffect(() => {
     setIsVisible(true);
   }, []);
+  
   return <section className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -23,14 +26,10 @@ const Hero = () => {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
-                <Button variant="primary" size="lg" leftIcon={<Apple size={20} />}>
-                  App Store
-                </Button>
+                <img src="/app-store-button.svg" alt="App Store" className="h-12 w-auto transition-opacity hover:opacity-90" />
               </a>
               <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="lg" leftIcon={<Smartphone size={20} />}>
-                  Google Play
-                </Button>
+                <img src="/play-store-button.svg" alt="Play Store" className="h-12 w-auto transition-opacity hover:opacity-90" />
               </a>
             </div>
             
@@ -84,4 +83,5 @@ const Hero = () => {
       <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
     </section>;
 };
+
 export default Hero;
