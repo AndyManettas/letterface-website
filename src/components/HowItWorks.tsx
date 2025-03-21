@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef } from 'react';
 import { PenSquare, Send, MailOpen } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -121,7 +122,7 @@ const HowItWorks = () => {
                         <div className="text-sm font-medium">Delivery Schedule</div>
                         <div className="space-y-2">
                           <div className="flex items-center space-x-2">
-                            <div className="w-4 h-4 rounded-full bg-primary"></div>
+                            <div className="w-3 h-3 rounded-full bg-primary"></div>
                             <div className="text-sm">Every weekday at 8:00 AM</div>
                           </div>
                           <div className="h-px bg-border"></div>
