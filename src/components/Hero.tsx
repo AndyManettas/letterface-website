@@ -59,12 +59,20 @@ const Hero = () => {
                   
                   <div className="space-y-3">
                     <p className="text-sm font-medium">Today's top tech headlines:</p>
-                    <ul className="space-y-2 list-disc pl-5 text-sm">
-                      <li>Nvidia's $1 Trillion AI Initiative</li>
-                      <li>At GTC 2025, Nvidia introduced its Blackwell Ultra GPU and Vera Rubin AI chips</li>
-                      <li>Stargate: A $500B AI Mega-Project</li>
-                    </ul>
-                    <p className="text-sm">SoftBank, Oracle, and OpenAI announced Stargate, an AI infrastructure project aiming to boost U.S. AI supremacy.</p>
+                    <div className="space-y-4">
+                      <div>
+                        <p className="font-semibold text-sm">Nvidia's $1 Trillion AI Initiative</p>
+                        <ul className="list-disc pl-5 text-sm">
+                          <li>At GTC 2025, Nvidia introduced its Blackwell Ultra GPU and Vera Rubin AI chips</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-sm">Stargate: A $500B AI Mega-Project</p>
+                        <ul className="list-disc pl-5 text-sm">
+                          <li>SoftBank, Oracle, and OpenAI announced Stargate, an AI infrastructure project aiming to boost U.S. AI supremacy.</li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
