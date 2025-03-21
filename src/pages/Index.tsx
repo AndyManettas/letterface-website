@@ -7,7 +7,6 @@ import HowItWorks from '@/components/HowItWorks';
 import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
-import AppDownload from '@/components/AppDownload';
 import { useLocation } from 'react-router-dom';
 
 const Index = () => {
@@ -32,7 +31,6 @@ const Index = () => {
         <Hero />
         <Features />
         <HowItWorks />
-        <AppDownload />
         <Testimonials />
         <FAQ />
       </main>
