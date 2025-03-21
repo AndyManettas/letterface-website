@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { PenSquare, Send, MailOpen } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -96,13 +95,13 @@ const HowItWorks = () => {
                 
                 <div className="relative flex md:justify-center">
                   <div className={cn(
-                    "absolute left-1/2 top-1/2 w-28 h-28 md:w-36 md:h-36 rounded-full blur-2xl opacity-20 -translate-x-1/2 -translate-y-1/2 z-0",
+                    "absolute left-1/2 top-1/2 w-24 h-24 md:w-32 md:h-32 rounded-full blur-2xl opacity-20 -translate-x-1/2 -translate-y-1/2 z-0",
                     step.color
                   )}></div>
                   
                   <div className="relative glass shadow-md rounded-xl p-6 border border-white/20 max-w-sm z-10">
                     <div className={cn(
-                      "absolute -top-5 left-4 w-8 h-8 rounded-full flex items-center justify-center",
+                      "absolute -top-5 left-4 w-7 h-7 rounded-full flex items-center justify-center",
                       step.color
                     )}>
                       {step.icon}
