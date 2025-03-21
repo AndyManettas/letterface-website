@@ -17,7 +17,7 @@ const faqItems = [
   },
   {
     question: "Is there a limit to how many newsletters I can create?",
-    answer: "Currently, there is a limit of 12 newsletters per paying account. In the future, different plans offer different numbers of newsletters."
+    answer: "Currently there is a limit of 12 newsletters per paying account. In the future, different plans will offer different numbers of newsletters."
   },
   {
     question: "How accurate is the information in the newsletters?",
