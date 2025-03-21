@@ -18,9 +18,7 @@ const Hero = () => {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
                 Your personalized newsletter, <span className="text-gradient">written by AI</span>
               </h1>
-              <p className="text-lg md:text-xl text-foreground/80 max-w-prose">
-                Letterface creates custom email digests on any topic you choose, delivered on your schedule.
-              </p>
+              <p className="text-lg md:text-xl text-foreground/80 max-w-prose">Letterface lets you create custom email digests on any topic, delivered on your schedule.</p>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
