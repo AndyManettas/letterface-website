@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Apple, Smartphone } from 'lucide-react';
 import Button from './Button';
 import { cn } from '@/lib/utils';
 
@@ -57,7 +57,18 @@ const Navbar = () => {
                 {link.name}
               </a>)}
           </div>
-          <Button>Get Started</Button>
+          <div className="flex space-x-2">
+            <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="sm" leftIcon={<Apple size={16} />}>
+                App Store
+              </Button>
+            </a>
+            <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="sm" leftIcon={<Smartphone size={16} />}>
+                Play Store
+              </Button>
+            </a>
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -71,7 +82,18 @@ const Navbar = () => {
         {navLinks.map(link => <a key={link.name} href={link.href} className="text-foreground/90 hover:text-primary py-3 border-b border-border/50 text-lg font-medium" onClick={toggleMenu}>
             {link.name}
           </a>)}
-        <Button className="w-full justify-center mt-6">Get Started</Button>
+        <div className="flex space-x-2 w-full">
+          <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" className="flex-1">
+            <Button variant="outline" size="sm" leftIcon={<Apple size={16} />} className="w-full justify-center">
+              App Store
+            </Button>
+          </a>
+          <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" className="flex-1">
+            <Button variant="outline" size="sm" leftIcon={<Smartphone size={16} />} className="w-full justify-center">
+              Play Store
+            </Button>
+          </a>
+        </div>
       </div>
     </nav>;
 };
