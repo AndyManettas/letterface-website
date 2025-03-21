@@ -1,13 +1,17 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Button from './Button';
 import { cn } from '@/lib/utils';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  
   const toggleMenu = () => setIsOpen(!isOpen);
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -16,6 +20,7 @@ const Navbar = () => {
         setScrolled(false);
       }
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -24,6 +29,7 @@ const Navbar = () => {
   useEffect(() => {
     setIsOpen(false);
   }, [location.pathname]);
+  
   const navLinks = [{
     name: 'Features',
     href: '/#features'
@@ -37,10 +43,11 @@ const Navbar = () => {
     name: 'FAQ',
     href: '/#faq'
   }];
+  
   return <nav className={cn("fixed top-0 w-full z-50 transition-all duration-300 py-4 px-6", scrolled ? "glass shadow-sm backdrop-blur-lg" : "bg-transparent")}>
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" className="flex items-center space-x-2">
-          <span className="font-display text-xl text-gray-300 font-bold">letterface</span>
+          <span className="font-display text-xl font-bold bg-gradient-to-r from-primary to-blue-400 bg-clip-text text-transparent">letterface</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -68,4 +75,5 @@ const Navbar = () => {
       </div>
     </nav>;
 };
+
 export default Navbar;
