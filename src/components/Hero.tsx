@@ -1,24 +1,16 @@
-
 import React, { useState, useEffect } from 'react';
 import Button from './Button';
 import { ArrowRight, Apple, Smartphone } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
-  
   useEffect(() => {
     setIsVisible(true);
   }, []);
-
-  return (
-    <section className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 px-4">
+  return <section className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className={cn(
-            "space-y-8 transform transition-all duration-700 opacity-0 translate-y-12",
-            isVisible && "opacity-100 translate-y-0"
-          )}>
+          <div className={cn("space-y-8 transform transition-all duration-700 opacity-0 translate-y-12", isVisible && "opacity-100 translate-y-0")}>
             <div className="space-y-3">
               <div className="inline-block rounded-full px-3 py-1 bg-primary/10 text-primary text-sm font-medium">
                 AI-Powered Newsletter Service
@@ -49,16 +41,13 @@ const Hero = () => {
             </p>
           </div>
           
-          <div className={cn(
-            "relative transform transition-all duration-700 delay-300 opacity-0 translate-y-12",
-            isVisible && "opacity-100 translate-y-0"
-          )}>
+          <div className={cn("relative transform transition-all duration-700 delay-300 opacity-0 translate-y-12", isVisible && "opacity-100 translate-y-0")}>
             <div className="relative">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/20 to-primary/10 rounded-2xl blur-xl opacity-70"></div>
               <div className="relative bg-white shadow-xl rounded-2xl p-6 overflow-hidden border border-white/40">
                 <div className="space-y-4">
                   <div className="space-y-2">
-                    <h3 className="font-medium text-lg">Daily Tech Digest</h3>
+                    <h3 className="text-lg font-extrabold">🚀 Daily Tech Digest</h3>
                     <p className="text-sm text-foreground/70">Delivered every morning at 8:00 AM</p>
                   </div>
                   
@@ -67,11 +56,11 @@ const Hero = () => {
                   <div className="space-y-3 prose prose-sm max-w-none">
                     <p>Today's top tech headlines:</p>
                     <ul>
-                      <li>Apple announces new MacBook Pro with M3 chip</li>
-                      <li>Google's AI model achieves human-level performance</li>
-                      <li>Startup raises $50M to build sustainable batteries</li>
+                      <li>Nvidia’s $1 Trillion AI Initiative</li>
+                      <li>At GTC 2025, Nvidia introduced its Blackwell Ultra GPU and Vera Rubin AI chips</li>
+                      <li>Stargate: A $500B AI Mega-Project</li>
                     </ul>
-                    <p>Curated specifically for you based on your interests.</p>
+                    <p>SoftBank, Oracle, and OpenAI announced Stargate, an AI infrastructure project aiming to boost U.S. AI supremacy.</p>
                   </div>
                 </div>
                 
@@ -87,8 +76,6 @@ const Hero = () => {
       
       <div className="absolute top-1/3 -left-28 w-56 h-56 bg-primary/10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-1/4 -right-20 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"></div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
