@@ -1,7 +1,7 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Apple, Smartphone } from 'lucide-react';
-import Button from './Button';
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return <footer className="bg-secondary/70 py-12 px-4">
@@ -16,14 +16,10 @@ const Footer = () => {
             </p>
             <div className="flex flex-wrap gap-4 mb-6">
               <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="sm" leftIcon={<Apple size={16} />}>
-                  App Store
-                </Button>
+                <img src="/app-store-button.svg" alt="App Store" className="h-10 w-auto transition-opacity hover:opacity-90" />
               </a>
               <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
-                <Button variant="outline" size="sm" leftIcon={<Smartphone size={16} />}>
-                  Google Play
-                </Button>
+                <img src="/play-store-button.svg" alt="Play Store" className="h-10 w-auto transition-opacity hover:opacity-90" />
               </a>
             </div>
             <p className="text-sm text-foreground/60">
