@@ -88,22 +88,22 @@ const HowItWorks = () => {
                   <p className="text-foreground/70 max-w-md">{step.description}</p>
                 </div>
                 
-                <div className="relative flex md:justify-center">
+                <div className="relative flex md:justify-end">
                   <div className={cn(
-                    "absolute left-1/2 top-1/2 w-28 h-28 md:w-36 md:h-36 rounded-full blur-2xl opacity-20 -translate-x-1/2 -translate-y-1/2 z-0",
+                    "absolute left-1/2 top-1/2 w-24 h-24 md:w-32 md:h-32 rounded-full blur-2xl opacity-20 -translate-x-1/2 -translate-y-1/2 z-0",
                     step.color
                   )}></div>
                   
-                  <div className="relative glass shadow-md rounded-xl p-6 border border-white/20 max-w-sm z-10">
+                  <div className="relative glass shadow-md rounded-xl p-5 border border-white/20 max-w-xs z-10 ml-auto md:ml-0 md:mr-4 scale-90">
                     <div className={cn(
-                      "absolute -top-6 -left-6 w-12 h-12 rounded-full flex items-center justify-center",
+                      "absolute -top-5 -left-5 w-10 h-10 rounded-full flex items-center justify-center",
                       step.color
                     )}>
                       {step.icon}
                     </div>
                     
                     {index === 0 && (
-                      <div className="flex flex-col space-y-3">
+                      <div className="flex flex-col space-y-2">
                         <div className="text-sm font-medium">Newsletter Prompt</div>
                         <div className="bg-secondary/50 rounded-lg p-3 text-sm">
                           Summarize the most important tech news in the last 24 hours
@@ -112,7 +112,7 @@ const HowItWorks = () => {
                     )}
                     
                     {index === 1 && (
-                      <div className="flex flex-col space-y-3">
+                      <div className="flex flex-col space-y-2">
                         <div className="text-sm font-medium">Delivery Schedule</div>
                         <div className="space-y-2">
                           <div className="flex items-center space-x-2">
@@ -126,7 +126,7 @@ const HowItWorks = () => {
                     )}
                     
                     {index === 2 && (
-                      <div className="flex flex-col space-y-3">
+                      <div className="flex flex-col space-y-2">
                         <div className="text-sm font-medium">Your Inbox</div>
                         <div className="bg-secondary/50 rounded-lg p-3 space-y-2">
                           <div className="text-sm font-semibold">Today's Tech Digest</div>
