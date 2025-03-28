@@ -1,6 +1,6 @@
 
 import { createRoot } from 'react-dom/client';
-import { Toaster } from 'sonner'; // Import Toaster from sonner
+import { Toaster } from 'sonner';
 import App from './App.tsx';
 import './index.css';
 
