@@ -2,7 +2,6 @@
 import React, { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
-import emailjs from 'emailjs-com';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Input } from '@/components/ui/input';
@@ -28,15 +27,17 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Replace these with your actual EmailJS service ID, template ID, and user ID
-      const result = await emailjs.sendForm(
-        'YOUR_SERVICE_ID', 
-        'YOUR_TEMPLATE_ID', 
-        formRef.current as HTMLFormElement, 
-        'YOUR_USER_ID'
-      );
+      // Using Formspree for form submission
+      const formData = new FormData(formRef.current as HTMLFormElement);
+      const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', { // Replace with your Formspree form ID
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
       
-      if (result.text === 'OK') {
+      if (response.ok) {
         toast.success("Message sent successfully! We'll get back to you soon.");
         formRef.current?.reset();
         setAcceptedTerms(false);
@@ -44,7 +45,7 @@ const Contact = () => {
         toast.error("Something went wrong. Please try again later.");
       }
     } catch (error) {
-      console.error('EmailJS error:', error);
+      console.error('Form submission error:', error);
       toast.error("Failed to send your message. Please try again later.");
     } finally {
       setIsSubmitting(false);
@@ -121,7 +122,8 @@ const Contact = () => {
                 </Label>
               </div>
               
-              <input type="hidden" name="to_email" value="contact@lifestylecorp.com.au" />
+              {/* Hidden field for recipient email - optional for Formspree */}
+              <input type="hidden" name="_replyto" value="contact@lifestylecorp.com.au" />
               
               <div className="pt-2">
                 <button 
