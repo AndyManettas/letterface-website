@@ -60,7 +60,7 @@ const Navbar = () => {
     href: '/#faq'
   }, {
     name: 'Contact',
-    href: '/contact'
+    href: '/contact'  // Updated to use the full route
   }];
   
   return (
