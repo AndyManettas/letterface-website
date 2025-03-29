@@ -12,6 +12,7 @@ const redirectFromGitHubPages = () => {
   }
 };
 
+// Execute redirect before rendering
 redirectFromGitHubPages();
 
 createRoot(document.getElementById("root")!).render(
