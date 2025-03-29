@@ -1,5 +1,6 @@
+
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -12,12 +13,51 @@ import { toast } from 'sonner';
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [acceptedTerms, setAcceptedTerms] = useState(false);
+  const [formValues, setFormValues] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  
   const formRef = useRef<HTMLFormElement>(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+    
+    // Parse URL query parameters
+    const params = new URLSearchParams(location.search);
+    
+    // Get values from URL parameters
+    const nameParam = params.get('name');
+    const emailParam = params.get('email');
+    const subjectParam = params.get('subject');
+    const messageParam = params.get('message');
+    const agreeParam = params.get('agree');
+    
+    // Update form values with URL parameters if they exist
+    setFormValues({
+      name: nameParam || '',
+      email: emailParam || '',
+      subject: subjectParam || '',
+      message: messageParam || ''
+    });
+    
+    // Set the checkbox if 'agree' parameter is 'true'
+    if (agreeParam === 'true') {
+      setAcceptedTerms(true);
+    }
+  }, [location.search]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormValues(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -43,6 +83,12 @@ const Contact = () => {
       if (response.ok) {
         toast.success("Message sent successfully! We'll get back to you soon.");
         formRef.current?.reset();
+        setFormValues({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
         setAcceptedTerms(false);
       } else {
         toast.error("Something went wrong. Please try again later.");
@@ -78,6 +124,8 @@ const Contact = () => {
                     name="name" 
                     placeholder="Your name" 
                     required 
+                    value={formValues.name}
+                    onChange={handleInputChange}
                   />
                 </div>
                 
@@ -89,6 +137,8 @@ const Contact = () => {
                     type="email" 
                     placeholder="Your email address" 
                     required 
+                    value={formValues.email}
+                    onChange={handleInputChange}
                   />
                 </div>
               </div>
@@ -100,6 +150,8 @@ const Contact = () => {
                   name="subject" 
                   placeholder="What is this regarding?" 
                   required 
+                  value={formValues.subject}
+                  onChange={handleInputChange}
                 />
               </div>
               
@@ -111,6 +163,8 @@ const Contact = () => {
                   placeholder="How can we help you?" 
                   className="min-h-32" 
                   required 
+                  value={formValues.message}
+                  onChange={handleInputChange}
                 />
               </div>
               
