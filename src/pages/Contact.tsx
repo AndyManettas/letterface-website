@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
@@ -70,7 +69,6 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Using Formspree for form submission
       const formData = new FormData(formRef.current as HTMLFormElement);
       const response = await fetch('https://formspree.io/f/xjkyeybq', {
         method: 'POST',
@@ -82,14 +80,6 @@ const Contact = () => {
       
       if (response.ok) {
         toast.success("Message sent successfully! We'll get back to you soon.");
-        formRef.current?.reset();
-        setFormValues({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-        setAcceptedTerms(false);
       } else {
         toast.error("Something went wrong. Please try again later.");
       }
