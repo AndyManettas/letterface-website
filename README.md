@@ -20,7 +20,7 @@ npm run preview
 
 ## Deployment
 
-The website is built to be deployed on GitHub Pages or any static site hosting service.
+The website is built using Vite and React, suitable for deployment on modern static site hosting services like Cloudflare Pages.
 
 After building with `npm run build`, the static files will be available in the `dist` directory.
 

@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <title>Letterface</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found</title>
     <script>
-      // Preserve clean URLs in GitHub Pages with SPA
-      (function () {
-        const path = window.location.pathname + window.location.search;
-        localStorage.setItem("spa:path", path);
-        window.location.href = "/";
-      })();
+      // Redirect to the homepage or a specific route
+      window.location.replace(window.location.origin);
     </script>
+    <style>
+      /* Basic styling */
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        padding: 40px;
+      }
+      h1 {
+        color: #333;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1>404 - Page Not Found</h1>
+    <p>Redirecting you...</p>
+  </body>
 </html>

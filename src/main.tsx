@@ -1,23 +1,10 @@
-import { createRoot } from 'react-dom/client';
-import { Toaster } from 'sonner';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 
-// Handle GitHub Pages SPA redirect
-const redirectFromGitHubPages = () => {
-  const redirectPath = localStorage.getItem('spa:path');
-  if (redirectPath) {
-    localStorage.removeItem('spa:path');
-    window.history.replaceState(null, '', redirectPath);
-  }
-};
-
-// Execute redirect before rendering
-redirectFromGitHubPages();
-
-createRoot(document.getElementById("root")!).render(
-  <>
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
     <App />
-    <Toaster position="top-right" richColors closeButton />
-  </>
+  </React.StrictMode>,
 );
