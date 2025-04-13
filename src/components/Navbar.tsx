@@ -74,10 +74,10 @@ const Navbar = () => {
               </a>)}
           </div>
           <div className="flex space-x-3">
-            <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://apps.apple.com/au/app/letterface/id6743641344" target="_blank" rel="noopener noreferrer">
               <img src="/app-store-button.svg" alt="App Store" className="h-10 w-auto transition-opacity hover:opacity-90" />
             </a>
-            <a href="https://play.google.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://play.google.com/store/apps/details?id=app.letterface" target="_blank" rel="noopener noreferrer">
               <img src="/play-store-button.svg" alt="Play Store" className="h-10 w-auto transition-opacity hover:opacity-90" />
             </a>
           </div>
@@ -118,10 +118,10 @@ const Navbar = () => {
             </a>
           ))}
           <div className="flex flex-col space-y-3 w-full pt-4">
-            <a href="https://apps.apple.com" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+            <a href="https://apps.apple.com/au/app/letterface/id6743641344" target="_blank" rel="noopener noreferrer" className="flex justify-center">
               <img src="/app-store-button.svg" alt="App Store" className="h-12 w-auto" />
             </a>
-            <a href="https://play.google.com" target="_blank" rel="noopener noreferrer" className="flex justify-center">
+            <a href="https://play.google.com/store/apps/details?id=app.letterface" target="_blank" rel="noopener noreferrer" className="flex justify-center">
               <img src="/play-store-button.svg" alt="Play Store" className="h-12 w-auto" />
             </a>
           </div>
