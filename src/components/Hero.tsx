@@ -6,7 +6,7 @@ const Hero = () => {
     <section className="relative overflow-hidden pt-32 pb-24 md:pt-40 md:pb-32 px-4">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 animate-fade-in" style={{ animationDelay: '100ms' }}>
+          <div className="space-y-8">
             <div className="space-y-3">
               <div className="inline-block rounded-full px-3 py-1 bg-primary/10 text-primary text-sm font-medium">
                 AI-Powered Newsletter Service
@@ -28,7 +28,7 @@ const Hero = () => {
             </div>
             <p className="text-foreground/60 text-sm">Available on iOS and Android. 14-day free trial available.</p>
           </div>
-          <div className="relative animate-fade-in" style={{ animationDelay: '300ms' }}>
+          <div className="relative">
             <div className="relative">
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary/20 to-primary/10 rounded-2xl blur-xl opacity-70"></div>
               <div className="relative bg-white shadow-xl rounded-2xl p-6 overflow-hidden border border-white/40">
