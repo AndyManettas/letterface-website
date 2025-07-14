@@ -1,5 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { cn } from '@/lib/utils';
+import useAnimateOnScroll from '@/hooks/useAnimateOnScroll';
+
 const testimonials = [{
   content: "Letterface has completely changed how I stay informed. Instead of scrolling through dozens of sites each morning, I get one perfectly curated email with exactly what I need to know.",
   author: "Sarah Johnson",
@@ -27,27 +29,8 @@ const testimonials = [{
 }];
 const Testimonials = () => {
   const testimonialsRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fade-in');
-          entry.target.classList.remove('opacity-0');
-        }
-      });
-    }, {
-      threshold: 0.1
-    });
-    const testimonialItems = document.querySelectorAll('.testimonial-item');
-    testimonialItems.forEach(item => {
-      observer.observe(item);
-    });
-    return () => {
-      testimonialItems.forEach(item => {
-        observer.unobserve(item);
-      });
-    };
-  }, []);
+  useAnimateOnScroll(testimonialsRef);
+  
   return <section id="testimonials" className="section-padding bg-primary/5">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
@@ -61,7 +44,7 @@ const Testimonials = () => {
         </div>
         
         <div ref={testimonialsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => <div key={index} className={cn("testimonial-item opacity-0 bg-background rounded-xl p-6 shadow-sm border border-border flex flex-col h-full transition-all duration-300 hover:shadow-md hover:border-primary/20 group")} style={{
+          {testimonials.map((testimonial, index) => <div key={index} className={cn("animate-on-scroll bg-background rounded-xl p-6 shadow-sm border border-border flex flex-col h-full transition-all duration-300 hover:shadow-md hover:border-primary/20 group")} style={{
           animationDelay: `${index * 100}ms`
         }}>
               <div className="mb-4">

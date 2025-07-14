@@ -1,7 +1,8 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { PenSquare, Send, MailOpen } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import useAnimateOnScroll from '@/hooks/useAnimateOnScroll';
 
 const steps = [
   {
@@ -29,31 +30,7 @@ const steps = [
 
 const HowItWorks = () => {
   const stepsRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-            entry.target.classList.remove('opacity-0');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
-    const stepItems = document.querySelectorAll('.step-item');
-    stepItems.forEach((item) => {
-      observer.observe(item);
-    });
-    
-    return () => {
-      stepItems.forEach((item) => {
-        observer.unobserve(item);
-      });
-    };
-  }, []);
+  useAnimateOnScroll(stepsRef, { threshold: 0.2 });
 
   return (
     <section id="how-it-works" className="section-padding">
@@ -77,7 +54,7 @@ const HowItWorks = () => {
               <div 
                 key={index} 
                 className={cn(
-                  "step-item opacity-0 relative md:grid md:grid-cols-2 gap-8 items-center",
+                  "animate-on-scroll relative md:grid md:grid-cols-2 gap-8 items-center",
                   index % 2 === 1 ? "md:rtl" : ""
                 )}
                 style={{ animationDelay: `${index * 200}ms` }}

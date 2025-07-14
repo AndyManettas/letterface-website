@@ -1,7 +1,8 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Sparkles, Clock, Zap, Feather, Palette, Lock } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import useAnimateOnScroll from '@/hooks/useAnimateOnScroll';
 
 const features = [
   {
@@ -38,31 +39,7 @@ const features = [
 
 const Features = () => {
   const featuresRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in');
-            entry.target.classList.remove('opacity-0');
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    
-    const featuresItems = document.querySelectorAll('.feature-item');
-    featuresItems.forEach((item) => {
-      observer.observe(item);
-    });
-    
-    return () => {
-      featuresItems.forEach((item) => {
-        observer.unobserve(item);
-      });
-    };
-  }, []);
+  useAnimateOnScroll(featuresRef);
 
   return (
     <section id="features" className="section-padding bg-secondary/50">
@@ -82,7 +59,7 @@ const Features = () => {
             <div 
               key={index}
               className={cn(
-                "feature-item opacity-0 bg-background rounded-xl p-6 shadow-sm border border-border/60 transition duration-300 hover:shadow-md hover:border-primary/20 flex flex-col h-full",
+                "animate-on-scroll bg-background rounded-xl p-6 shadow-sm border border-border/60 transition-shadow duration-300 hover:shadow-md hover:border-primary/20 flex flex-col h-full",
               )}
               style={{ animationDelay: `${index * 100}ms` }}
             >
