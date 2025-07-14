@@ -6,33 +6,41 @@ interface UseAnimateOnScrollOptions {
 }
 
 const useAnimateOnScroll = (
-  ref: RefObject<HTMLElement>,
+  containerRef: RefObject<HTMLElement>,
   options: UseAnimateOnScrollOptions = { threshold: 0.1 }
 ) => {
   useEffect(() => {
-    const target = ref.current;
-    if (!target) return;
+    const container = containerRef.current;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      options
-    );
+    const elements: Element[] = [];
 
-    observer.observe(target);
+    if (container) {
+      // If the container itself has the class, include it.
+      if (container.classList.contains('animate-on-scroll')) {
+        elements.push(container);
+      }
+
+      // Also include all descendants with the class.
+      container.querySelectorAll('.animate-on-scroll').forEach((el) => elements.push(el));
+    }
+
+    if (elements.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    elements.forEach((el) => observer.observe(el));
 
     return () => {
-      if (target) {
-        observer.unobserve(target);
-      }
+      elements.forEach((el) => observer.unobserve(el));
     };
-  }, [ref, options]);
+  }, [containerRef, options]);
 };
 
 export default useAnimateOnScroll; 
